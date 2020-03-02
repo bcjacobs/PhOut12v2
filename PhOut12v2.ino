@@ -127,7 +127,7 @@ void OnNoteOn(byte channel, byte note, byte velocity)
 
 void OnControlChange(byte channel, byte control, byte value)
 {
-  myservo1_value = map(value, 0, 127, 0, 50); // map midi values to servo values. these could be different for each servo. myservo1_value = map(value, 0, 127, 0, 180)
+  myservo1_value = map(value, 0, 127, 0, 180); // map midi values to servo values. these could be different for each servo. myservo1_value = map(value, 0, 127, 0, 180)
   if (control == 1 && channel == setChannel) {
       myservo1.attach(servo1_pin);
       myservo1.write(myservo1_value);
